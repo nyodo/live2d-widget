@@ -14,6 +14,24 @@ function showHitokoto() {
     setTimeout(() => {
         showMessage(text, 4000, 9);
     }, 6000);
+    // 获取容器元素
+    var container = document.getElementById('inputContainer');
+    // 创建输入框
+    var inputField = document.createElement('input');
+    // 设置输入框的属性
+    inputField.type = 'text';
+    inputField.placeholder = '请输入内容';
+    // 将输入框添加到容器中
+    container.appendChild(inputField);
+    inputField.style.width = '200px';
+    inputField.style.padding = '10px';
+    inputField.style.fontSize = '16px';
+    inputField.addEventListener('input', function(event) {
+        console.log("输入框的值为：" + event.target.value);
+      });
+
+
+
     /*fetch("https://v1.hitokoto.cn")
         .then(response => response.json())
         .then(result => {
