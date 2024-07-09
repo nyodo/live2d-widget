@@ -15,7 +15,7 @@ function showHitokoto() {
         showMessage(text, 4000, 9);
     }, 6000);
     // 获取容器元素
-    var container = document.getElementById('inputContainer');
+    var container = document.getElementById('hitokoto');
     // 创建输入框
     var inputField = document.createElement('input');
     // 设置输入框的属性
