@@ -10,11 +10,21 @@ import showMessage from "./message.js";
 const s=''
 function showHitokoto() {
     // 增加 hitokoto.cn 的 API
-    document.body.insertAdjacentHTML("beforeend", `<div id="waifu-asks"></div>`);
-    const text = document.getElementById("myName").value;
-    setTimeout(() => {
-        showMessage(text, 4000, 9);
-    }, 6000);
+    document.body.insertAdjacentHTML("beforeend", `<div id="waifu-asks">
+        <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" />
+        <button id="btn">Save</button>
+        </div>`);
+    const btn= document.getElementById("btn");
+    var txt;
+    btn.addEventListener('click', function(){
+        txt = document.getElementById("name").value;
+            setTimeout(() => {
+            showMessage(txt, 4000, 9);
+        }, 6000);
+    });
+    
+
+    
     // 获取容器元素
     
 
