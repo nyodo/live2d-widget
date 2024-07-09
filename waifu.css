@@ -36,7 +36,25 @@
 #waifu:hover {
 	transform: translateY(0);
 }
-
+#waifu-asks {
+	animation: shake 50s ease-in-out 5s infinite;
+	background-color: rgba(188, 236, 231, 0.5);
+	border: 1px solid rgba(140, 211, 224, 0.62);
+	border-radius: 12px;
+	box-shadow: 0 3px 15px 2px rgba(118, 191, 187, 0.2);
+	font-size: 14px;
+	line-height: 24px;
+	margin: -60px 40px;
+	min-height: 70px;
+	opacity: 0;
+	overflow: hidden;
+	padding: 5px 10px;
+	position: absolute;
+	text-overflow: ellipsis;
+	transition: opacity 1s;
+	width: 250px;
+	word-break: break-all;
+}
 #waifu-tips {
 	animation: shake 50s ease-in-out 5s infinite;
 	background-color: rgba(236, 217, 188, .5);

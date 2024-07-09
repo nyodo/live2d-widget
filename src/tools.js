@@ -10,7 +10,7 @@ import showMessage from "./message.js";
 const s=''
 function showHitokoto() {
     // 增加 hitokoto.cn 的 API
-    
+    document.body.insertAdjacentHTML("beforeend", `<div id="waifu-asks"></div>`);
     const text = document.getElementById("myName").value;
     setTimeout(() => {
         showMessage(text, 4000, 9);
