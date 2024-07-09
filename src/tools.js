@@ -10,7 +10,7 @@ import showMessage from "./message.js";
 const s=''
 function showHitokoto() {
     // 增加 hitokoto.cn 的 API
-    const text = 'HAHAHAHAHA';
+    const text = `hehe`;
     setTimeout(() => {
         showMessage(text, 4000, 9);
     }, 6000);
