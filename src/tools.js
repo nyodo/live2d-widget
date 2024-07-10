@@ -15,12 +15,15 @@ function showHitokoto() {
         <button id="btn">Save</button>
         </div>`);
     const btn= document.getElementById("btn");
+    const ask= document.getElementById("name");
     var txt="";
     btn.addEventListener('click', function(){
         txt = document.getElementById("name").value;
             setTimeout(() => {
             showMessage(txt, 4000, 9);
+            ask.remove("name");
         }, 6000);
+
     });
     
 
