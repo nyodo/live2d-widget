@@ -7,20 +7,22 @@ import fa_info_circle from "@fortawesome/fontawesome-free/svgs/solid/circle-info
 import fa_xmark from "@fortawesome/fontawesome-free/svgs/solid/xmark.svg";
 
 import showMessage from "./message.js";
-const s=''
+let messageTimer;
 function showHitokoto() {
     // 增加 hitokoto.cn 的 API
-    document.body.insertAdjacentHTML("beforeend", `<div id="waifu-asks">
-        <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-        <button id="btn">Save</button>
-        </div>`);
+    if (messageTimer) {
+        clearTimeout(messageTimer);
+        messageTimer = null;
+    }
     const btn= document.getElementById("btn");
     const ask= document.getElementById("waifu-asks");
     var txt="";
     btn.addEventListener('click', function(){
         txt = document.getElementById("name").value;
-            setTimeout(() => {
-            showMessage(txt, 4000, 9);
+        ask.innerHTML=txt;
+        ask.classList.add("waifu-asks");
+        showMessage(txt, 4000, 9);
+        messageTimer = setTimeout(() => {
             ask.remove("waifu-asks");
         }, 6000);
 

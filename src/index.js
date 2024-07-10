@@ -11,6 +11,10 @@ function loadWidget(config) {
             <div id="waifu-tips"></div>
             <canvas id="live2d" width="800" height="800"></canvas>
             <div id="waifu-tool"></div>
+            <div id="waifu-asks">
+                <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" />
+                <button id="btn">Save</button>
+            </div>
         </div>`);
     // https://stackoverflow.com/questions/24148403/trigger-css-transition-on-appended-element
     setTimeout(() => {
