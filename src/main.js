@@ -9,7 +9,7 @@ let requestObj = {
     APPID: 'b1c0de9a',
     APISecret: 'ZjlmYmMyOWNlYTBlMzM0MDNjYTIyNTg1',
     APIKey: '866d92574457cdf9f449990cf3f7d960',
-    Uid:"red润",
+    Uid:"123",
     sparkResult: ''
 }
 // 点击发送信息按钮
@@ -36,11 +36,12 @@ const sendMsg = async () => {
         let params = {
             "header": {
                 "app_id": requestObj.APPID,
-                "uid": "redrun"
+                "uid": requestObj.Uid
             },
             "parameter": {
                 "chat": {
-                    "domain": "general",
+                    // "domain": "general",
+                    "domain": "generalv3.5",
                     "temperature": 0.5,
                     "max_tokens": 1024,
                 }
@@ -97,13 +98,15 @@ const sendMsg = async () => {
 // 鉴权url地址
 const getWebsocketUrl = () => {
     return new Promise((resovle, reject) => {
-        let url = "wss://spark-api.xf-yun.com/v1.1/chat";
+        // let url = "wss://spark-api.xf-yun.com/v1.1/chat";
+        let url = "wss://spark-api.xf-yun.com/v2.1/chat";
         let host = "spark-api.xf-yun.com";
         let apiKeyName = "api_key";
         let date = new Date().toGMTString();
         let algorithm = "hmac-sha256"
         let headers = "host date request-line";
-        let signatureOrigin = `host: ${host}\ndate: ${date}\nGET /v1.1/chat HTTP/1.1`;
+        // let signatureOrigin = `host: ${host}\ndate: ${date}\nGET /v1.1/chat HTTP/1.1`;
+        let signatureOrigin = `host: ${host}\ndate: ${date}\nGET /v2.1/chat HTTP/1.1`;
         let signatureSha = CryptoJs.HmacSHA256(signatureOrigin, requestObj.APISecret);
         let signature = CryptoJs.enc.Base64.stringify(signatureSha);
 
@@ -129,4 +132,3 @@ const getWebsocketUrl = () => {
 const addMsgToTextarea = (text) => {
     result.innerHTML = text;
 }
-
