@@ -6,9 +6,9 @@ let sendMsgBtn = document.querySelector("#bttn");
 let result = document.querySelector("#result");
 
 let requestObj = {
-    APPID: 'b1c0de9a',
-    APISecret: 'ZjlmYmMyOWNlYTBlMzM0MDNjYTIyNTg1',
-    APIKey: '866d92574457cdf9f449990cf3f7d960',
+    APPID: '6483403d',
+    APISecret: 'ZmRlNGUxMjMwZTcxZTVhZTYwOWNjZWE3',
+    APIKey: '9a4eefb7835fd4065f624bee6c308048',
     sparkResult: ''
 }
 // 点击发送信息按钮
@@ -41,7 +41,7 @@ const sendMsg = async () => {
                     // "domain": "general",
                     "domain": "generalv3.5",
                     "temperature": 0.5,
-                    "max_tokens": 1024,
+                    "max_tokens": 64,
                 }
             },
             "payload": {
@@ -70,7 +70,7 @@ const sendMsg = async () => {
         if (data.header.code === 0) {
             // 对话已经完成
             if (data.payload.choices.text && data.header.status === 2) {
-                requestObj.sparkResult += data.payload.choices.text[0].content;
+                //requestObj.sparkResult += data.payload.choices.text[0].content;
                 setTimeout(() => {
                     // "对话完成，手动关闭连接"
                     socket.close()
