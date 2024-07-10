@@ -15,7 +15,7 @@ function showHitokoto() {
         <button id="btn">Save</button>
         </div>`);
     const btn= document.getElementById("btn");
-    var txt;
+    var txt="";
     btn.addEventListener('click', function(){
         txt = document.getElementById("name").value;
             setTimeout(() => {
