@@ -2,7 +2,7 @@ import * as base64 from 'base-64'
 import CryptoJs from 'crypto-js'
 
 let questionInput = document.querySelector("#question");
-let sendMsgBtn = document.querySelector("#btn");
+let sendMsgBtn = document.querySelector("#bttn");
 let result = document.querySelector("#result");
 
 let requestObj = {
