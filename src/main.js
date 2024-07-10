@@ -106,7 +106,7 @@ const getWebsocketUrl = () => {
         let algorithm = "hmac-sha256"
         let headers = "host date request-line";
         // let signatureOrigin = `host: ${host}\ndate: ${date}\nGET /v1.1/chat HTTP/1.1`;
-        let signatureOrigin = `host: ${host}\ndate: ${date}\nGET /v2.1/chat HTTP/1.1`;
+        let signatureOrigin = `host: ${host}\ndate: ${date}\nGET /v3.5/chat HTTP/1.1`;
         let signatureSha = CryptoJs.HmacSHA256(signatureOrigin, requestObj.APISecret);
         let signature = CryptoJs.enc.Base64.stringify(signatureSha);
 
