@@ -15,13 +15,13 @@ function showHitokoto() {
         <button id="btn">Save</button>
         </div>`);
     const btn= document.getElementById("btn");
-    const ask= document.getElementById("name");
+    const ask= document.getElementById("waifu-asks");
     var txt="";
     btn.addEventListener('click', function(){
         txt = document.getElementById("name").value;
             setTimeout(() => {
             showMessage(txt, 4000, 9);
-            ask.remove("name");
+            ask.remove("waifu-asks");
         }, 6000);
 
     });
