@@ -12,7 +12,9 @@ function loadWidget(config) {
             <canvas id="live2d" width="800" height="800"></canvas>
             <div id="waifu-tool"></div>
             <div id="waifu-asks">
+                <label for="name">请输入文本</label>
                 <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" />
+                <label for="btn"></label>
                 <button id="btn">Save</button>
             </div>
         </div>`);
