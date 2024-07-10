@@ -18,15 +18,16 @@ function showHitokoto() {
     const btn= document.querySelector("bttn");
     const ask= document.getElementById("waifu-asks");
     var txt="";
+    let res=document.getElementById("result");
     btn.addEventListener('click', function(){
-        txt = document.getElementById("result").value;
+        txt = res.value;
         ask.innerHTML=txt;
         ask.classList.add("waifu-asks-active");
         showMessage(txt, 4000, 9);
         messageTimer = setTimeout(() => {
             ask.remove("waifu-asks-active");
         }, 6000);
-
+        res.value='';
     });
     
 
