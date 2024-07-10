@@ -99,7 +99,7 @@ const sendMsg = async () => {
 const getWebsocketUrl = () => {
     return new Promise((resovle, reject) => {
         // let url = "wss://spark-api.xf-yun.com/v1.1/chat";
-        let url = "wss://spark-api.xf-yun.com/v2.1/chat";
+        let url = "wss://spark-api.xf-yun.com/v3.5/chat";
         let host = "spark-api.xf-yun.com";
         let apiKeyName = "api_key";
         let date = new Date().toGMTString();
