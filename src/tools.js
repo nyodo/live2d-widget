@@ -14,17 +14,20 @@ function showHitokoto() {
         clearTimeout(messageTimer);
         messageTimer = null;
     }
-    const btn= document.querySelector("btn");
+    let questionInput = document.querySelector("#question");
+    const btn= document.querySelector("bttn");
     const ask= document.getElementById("waifu-asks");
     var txt="";
-    txt = document.getElementById("result").value;
+    btn.addEventListener('click', function(){
+        txt = document.getElementById("result").value;
         ask.innerHTML=txt;
         ask.classList.add("waifu-asks-active");
         showMessage(txt, 4000, 9);
         messageTimer = setTimeout(() => {
             ask.remove("waifu-asks-active");
         }, 6000);
-    //btn.addEventListener('click', function(){});
+
+    });
     
 
     
