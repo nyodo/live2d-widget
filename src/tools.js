@@ -14,7 +14,7 @@ function showHitokoto() {
         clearTimeout(messageTimer);
         messageTimer = null;
     }
-    const btn= document.getElementById("btn");
+    const btn= document.querySelector("btn");
     const ask= document.getElementById("waifu-asks");
     var txt="";
     btn.addEventListener('click', function(){
